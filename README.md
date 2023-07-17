@@ -6,18 +6,15 @@ Uses:
 - [Svelte](https://svelte.dev/)
 - [Rust](https://www.rust-lang.org/)
 
-
 Goal:
 
 - play audio files in a cross-platform application
 - audio files are retrieved from the backend
 
-
 ## Pre-requisites
 
 - https://tauri.app/v1/guides/getting-started/prerequisites#setting-up-macos
 - https://tauri.app/v1/guides/building/macos
-
 
 ## Getting started
 
@@ -30,7 +27,60 @@ pnpm tauri dev --target aarch64-apple-darwin
 
 ## Bugs
 
-- I cannot hear the audio on:
+- I cannot hear the audio
+
+### Attempts
+
+```bash
+pnpm tauri build
+# or
+pnpm tauri dev --target aarch64-apple-darwin
+```
+
+----
+
+`src-tauri/tauri.conf.json`
+
+Adding `tauri.bundle.appimage`: 
+
+```json
+"appimage":{
+    "bundleMediaFramework": true
+}
+```
+
+----
+
+Having `tauri.allowlist`: 
+
+```json
+{
+    "all": true,
+    "shell": {
+        "all": false,
+        "open": true
+    }
+}
+```
+
+or
+
+```json
+{
+    "all": true,
+    "shell": {
+        "all": false,
+        "open": true
+    },
+    "protocol": {
+        "asset": true,
+        "assetScope": ["**"]
+    }
+}
+```
+
+
+### Setup
 
 ```bash
 pnpm run tauri info
