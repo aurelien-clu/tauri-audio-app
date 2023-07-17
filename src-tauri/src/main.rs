@@ -1,6 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-const AUDIO: &[u8] = include_bytes!("../../data/kuruma.mp3");
+const AUDIO: &[u8] = include_bytes!("../../data/output.mp3");
 
 #[tauri::command]
 fn audio() -> Result<Vec<u8>, String> {
