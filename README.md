@@ -79,6 +79,9 @@ or
 }
 ```
 
+----
+
+Having `tauri.macOSPrivateApi: true`: 
 
 ### Setup
 
