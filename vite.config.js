@@ -14,7 +14,7 @@ export default defineConfig(async () => ({
     strictPort: true,
     proxy: {
       '/audio': {
-        target: 'https://github.com/aurelien-clu/tauri-audio-app/data/kuruma.mp3',
+        target: 'https://github.com/aurelien-clu/tauri-audio-app/raw/main/data/kuruma.mp3',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/audio/, ''),
       },
